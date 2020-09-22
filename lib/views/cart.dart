@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:badges/badges.dart';
+// import 'package:badges/badges.dart';
 import 'package:shopper/controllers/cart.dart';
 import 'package:shopper/views/order.dart';
 
@@ -116,21 +116,22 @@ class _AppBar extends StatelessWidget with PreferredSizeWidget {
       actions: [
         Consumer<CartController>(
           builder: (context, cart, child) => IconButton(
-            icon: Badge(
-              badgeColor: Colors.orange,
-              toAnimate: false,
-              badgeContent: Text(
-                '${cart.items.length}',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.white,
-                ),
-              ),
-              child: Icon(
-                Icons.delete_forever,
-                color: Colors.white,
-              ),
-            ),
+            icon: Icon(Icons.delete_forever),
+            // icon: Badge(
+            //   badgeColor: Colors.orange,
+            //   toAnimate: false,
+            //   badgeContent: Text(
+            //     '${cart.items.length}',
+            //     style: TextStyle(
+            //       fontSize: 12,
+            //       color: Colors.white,
+            //     ),
+            //   ),
+            //   child: Icon(
+            //     Icons.delete_forever,
+            //     color: Colors.white,
+            //   ),
+            // ),
             onPressed: () {
               cartController.clear();
             },

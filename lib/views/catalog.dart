@@ -4,7 +4,7 @@ import 'package:shopper/controllers/cart.dart';
 import 'package:shopper/controllers/catalog.dart';
 import 'package:shopper/models/catalog.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:badges/badges.dart';
+// import 'package:badges/badges.dart';
 
 class ShopCatalog extends StatelessWidget {
   @override
@@ -98,21 +98,23 @@ class _AppBar extends StatelessWidget with PreferredSizeWidget {
       actions: [
         Consumer<CatalogController>(
           builder: (context, catalog, child) => IconButton(
-            icon: Badge(
-              badgeColor: Colors.orange,
-              toAnimate: false,
-              badgeContent: Text(
-                '${catalog.catalogs.length}',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.white,
-                ),
-              ),
-              child: Icon(
-                Icons.delete_forever,
-                color: Colors.white,
-              ),
-            ),
+            icon: Icon(Icons.delete_forever),
+            // icon: Badge(
+            //   badgeColor: Colors.orange,
+            //   // overflow: Overflow.visible,
+            //   toAnimate: false,
+            //   badgeContent: Text(
+            //     '${catalog.catalogs.length}',
+            //     style: TextStyle(
+            //       fontSize: 12,
+            //       color: Colors.white,
+            //     ),
+            //   ),
+            //   child: Icon(
+            //     Icons.delete_forever,
+            //     color: Colors.white,
+            //   ),
+            // ),
             onPressed: () {
               catalogController.clearCatalogs();
             },
@@ -147,19 +149,20 @@ class _BottomBar extends StatelessWidget {
                   color: Colors.red,
                   iconSize: 30.0,
                   padding: EdgeInsets.only(left: 0.0),
-                  icon: Badge(
-                    badgeContent: Text(
-                      '${cart.items.length}',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                      ),
-                    ),
-                    child: Icon(
-                      Icons.shopping_cart,
-                      color: Colors.white,
-                    ),
-                  ),
+                  icon: Icon(Icons.shopping_cart),
+                  // icon: Badge(
+                  //   badgeContent: Text(
+                  //     '${cart.items.length}',
+                  //     style: TextStyle(
+                  //       fontSize: 12,
+                  //       color: Colors.white,
+                  //     ),
+                  //   ),
+                  //   child: Icon(
+                  //     Icons.shopping_cart,
+                  //     color: Colors.white,
+                  //   ),
+                  // ),
                   onPressed: () => Navigator.pushNamed(context, '/cart'),
                 ),
               ),
